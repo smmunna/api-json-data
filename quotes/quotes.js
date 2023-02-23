@@ -1,1 +1,5 @@
-console.log('Blockquotes')
+const blockQuotes = () =>{
+    console.log('first')
+}
+
+blockQuotes();
