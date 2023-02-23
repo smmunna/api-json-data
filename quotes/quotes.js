@@ -4,7 +4,8 @@ const blockQuotes = () =>{
         .then(data=> displayQuotes(data));
 }
 const displayQuotes = (quotes) =>{
-    console.log(quotes)
+    const blockquotes = document.getElementById('quotes');
+    blockquotes.innerHTML = quotes.quote;
 }
 
 blockQuotes();
