@@ -17,10 +17,30 @@ const displayCountry = country =>{
         countryCard.innerHTML = `
             <h3>Name: ${countries.name.common}</h3>
             <p>Capital: ${countries.capital ? countries.capital[0]:'No Capital City'}</p>
+            <button onclick="countryDetails('${countries.cca2}')">Country Details</button>
         `
         countriesList.appendChild(countryCard);
 
+
     });
+}
+
+const countryDetails = code =>{
+    const ccode = `https://restcountries.com/v3.1/alpha/${code}`
+    fetch(ccode)
+        .then(res=>res.json())
+        .then(data=>displayFlags(data));
+}
+
+const displayFlags = flags =>{
+    console.log(flags)
+    const flagsUrl = flags[0].flags.png;
+    const cname = flags[0].name.common;
+    const includeFlags = document.getElementById('country-details');
+    includeFlags.innerHTML = `
+        <h2>Name: ${cname} </h2>
+        <img src="${flagsUrl}" >
+    `
 }
 
 countryList();
