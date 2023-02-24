@@ -9,7 +9,7 @@ const displayCountry = country =>{
 
     // forEach for load All data's from country Apis
     country.forEach(countries => {
-        console.log(countries)
+        console.log(countries.name.common)
     });
 }
 
