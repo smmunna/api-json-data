@@ -20,7 +20,7 @@ const displayMeals = (meals) =>{
             <img src="${meals.strMealThumb}" class="card-img-top" alt="${meals.strMeal}">
                 <div class="card-body">
                     <h5 class="card-title">${meals.strMeal}</h5>
-                    <p class="card-text">${meals.strInstructions}</p>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, inventore.</p>
                 </div>
         </div>
     `
