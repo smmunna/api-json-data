@@ -7,9 +7,19 @@ const countryList = () =>{
 const displayCountry = country =>{
     //console.log(country)
 
-    // forEach for load All data's from country Apis
+    // forEach/map for load All data's from country Apis
     country.forEach(countries => {
-        console.log(countries.name.common)
+        console.log(countries)
+        const countriesList = document.getElementById('countries');
+
+        const countryCard = document.createElement('div');
+        countryCard.classList.add('country-card');
+        countryCard.innerHTML = `
+            <h3>Name: ${countries.name.common}</h3>
+            <p>Capital: ${countries.capital[0]}</p>
+        `
+        countriesList.appendChild(countryCard);
+
     });
 }
 
