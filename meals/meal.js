@@ -1,5 +1,6 @@
-const getMeal = () =>{
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=fish')
+const getMeal = (foodItem) =>{
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodItem}`;
+    fetch(url)
         .then(res=> res.json())
         .then(data=>displayMeals(data));
 }
@@ -10,7 +11,7 @@ const displayMeals = (meals) =>{
     
     // Main DIV;
     const colListDiv = document.getElementById('col-list');
-
+    colListDiv.innerHTML ='';
     mealList.forEach(meals=>{
         // Making the DIV;
     const div = document.createElement('div');
@@ -27,5 +28,12 @@ const displayMeals = (meals) =>{
     colListDiv.appendChild(div);
     })
 }
-// First Function Call;
-getMeal();
+
+const searchFood = () =>{
+    const input = document.getElementById('search').value;
+    // First Function Call;
+    getMeal(input);
+}
+
+// By Deafult Values;
+getMeal('fish')
