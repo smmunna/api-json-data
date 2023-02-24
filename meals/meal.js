@@ -12,16 +12,15 @@ const displayMeals = (meals) =>{
     const colListDiv = document.getElementById('col-list');
 
     mealList.forEach(meals=>{
-        console.log(meals)
         // Making the DIV;
     const div = document.createElement('div');
     div.classList.add('col');
     div.innerHTML = `
         <div class="card h-100">
-            <img src="${meals.strMealThumb}" class="card-img-top" alt="...">
+            <img src="${meals.strMealThumb}" class="card-img-top" alt="${meals.strMeal}">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">${meals.strMeal}</h5>
+                    <p class="card-text">${meals.strInstructions}</p>
                 </div>
         </div>
     `
