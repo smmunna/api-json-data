@@ -9,7 +9,6 @@ const displayCountry = country =>{
 
     // forEach/map for load All data's from country Apis
     country.forEach(countries => {
-        console.log(countries)
         const countriesList = document.getElementById('countries');
 
         const countryCard = document.createElement('div');
@@ -33,7 +32,6 @@ const countryDetails = code =>{
 }
 
 const displayFlags = flags =>{
-    console.log(flags)
     const flagsUrl = flags[0].flags.png;
     const cname = flags[0].name.common;
     const includeFlags = document.getElementById('country-details');
