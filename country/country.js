@@ -16,7 +16,7 @@ const displayCountry = country =>{
         countryCard.classList.add('country-card');
         countryCard.innerHTML = `
             <h3>Name: ${countries.name.common}</h3>
-            <p>Capital: ${countries.capital[0]}</p>
+            <p>Capital: ${countries.capital ? countries.capital[0]:'No Capital City'}</p>
         `
         countriesList.appendChild(countryCard);
 
